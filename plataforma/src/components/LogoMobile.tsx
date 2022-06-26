@@ -18,4 +18,4 @@ export const LogoMobile = (props: any) => (
   </svg>
 );
 
-export default SvgComponent;
+export default LogoMobile;
