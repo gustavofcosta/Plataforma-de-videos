@@ -74,7 +74,7 @@ function Subscribe() {
           </form>
         </div>
       </div>
-      <img src="/src/assets/mask.png" className="mt-10" alt="" />
+      <img src="/assets/mask.png" className="mt-10" alt="" />
     </div>
   );
 }

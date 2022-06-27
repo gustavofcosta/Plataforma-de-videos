@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { UserToggleMenuProvider } from "./contexts/ToggleMenuContext";
 import Event from "./pages/Event";
 import Subscribe from "./pages/Subscribe";
 

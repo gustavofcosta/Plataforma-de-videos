@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
@@ -5,6 +6,7 @@ import Video from "../components/Video";
 
 function Event() {
   const { slug } = useParams<{ slug: string }>();
+
   return (
     <div className="fex flex-col min-h-screen">
       <Header />

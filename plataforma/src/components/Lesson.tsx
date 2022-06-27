@@ -2,6 +2,8 @@ import { CheckCircle, Lock } from "phosphor-react";
 import { isPast, format } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { Link, useParams } from "react-router-dom";
+import { useContext } from "react";
+import { ToggleMenuContext } from "../contexts/ToggleMenuContext";
 
 interface LessonsProps {
   title: string;
@@ -11,6 +13,8 @@ interface LessonsProps {
 }
 
 function Lesson(props: LessonsProps) {
+  const { setToggle } = useContext(ToggleMenuContext);
+
   const { slug } = useParams<{ slug: string }>();
 
   const isLessonAvailable = isPast(props.availableAt);
@@ -22,8 +26,16 @@ function Lesson(props: LessonsProps) {
 
   const isActiveLesson = slug === props.slug;
 
+  const handleCloseMenu = () => {
+    setToggle(false);
+  };
+
   return (
-    <Link className="group" to={`/event/lesson/${props.slug}`}>
+    <Link
+      onClick={handleCloseMenu}
+      className="group"
+      to={`/event/lesson/${props.slug}`}
+    >
       <span className="text-gray-300">{availableDateFormatted}</span>
 
       <div
